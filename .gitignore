@@ -102,3 +102,16 @@ dist
 
 # TernJS port file
 .tern-port
+
+# IDEs
+.idea/
+
+# Parcel
+.parcel-cache/
+
+# By OS
+.DS_Store
+
+# production custom
+build/
+.firebase/
