@@ -1,4 +1,4 @@
-// import { MainHeader, MainFooter } from "@/components/index";
+import { MainHeader, MainFooter } from "@/components/index";
 
 import styles from "./MainLayout.module.scss";
 
@@ -7,15 +7,13 @@ export function MainLayout(props) {
 
   return (
     <div>
-      {/*<MainHeader />*/}
-      <header>El cabecero</header>
+      <MainHeader />
 
       <div className={styles.childrenContainer}>
         {children}
       </div>
 
-      {/*<MainFooter />*/}
-      <footer>El pie de página</footer>
+      <MainFooter />
     </div>
   );
 }

@@ -2,5 +2,6 @@
 
 .childrenContainer {
   max-width: vars.$sizeTimes100;
-  margin: auto;
+  margin: vars.$sizeTimes1-5 auto;
+  padding: vars.$sizeTimes1;
 }

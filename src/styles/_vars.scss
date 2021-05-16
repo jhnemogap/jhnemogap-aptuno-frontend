@@ -3,14 +3,18 @@
 $brandColorPrimary: #0055fb;
 $brandColorSecondary: #000c1c;
 $brandColorPrimaryWhite: #fafaff;
+$colorPrimaryAction: #007bff;
+$colorSecondaryAction: #fd8d5d;
 
 $fontColorPrimary: $brandColorSecondary;
 $fontColorSecondary: $brandColorPrimary;
 $fontColorPrimaryLight: color.adjust($fontColorPrimary, $alpha: -0.24);
-$fontColorPrimaryLink: #007bff;
+$fontColorPrimaryLink: $colorPrimaryAction;
 
 $bgColorPrimary: color.adjust($brandColorPrimaryWhite, $blackness: 8%);
 $bgColorSecondary: $brandColorPrimaryWhite;
+$bgColorPrimaryAction: $colorPrimaryAction;
+$bgColorSecondaryAction: $colorSecondaryAction;
 
 $sizeUnit: 16px;
 $fontSizeRoot: $sizeUnit;
