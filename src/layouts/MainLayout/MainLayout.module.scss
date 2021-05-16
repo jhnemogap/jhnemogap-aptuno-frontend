@@ -1,0 +1,6 @@
+@use "../../styles/vars";
+
+.childrenContainer {
+  max-width: vars.$sizeTimes100;
+  margin: auto;
+}

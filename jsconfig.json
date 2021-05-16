@@ -4,6 +4,7 @@
     "paths": {
       "@/components/*": ["components/*"],
       "@/constants/*": ["constants/*"],
+      "@/layout/*": ["layout/*"],
       "@/routes/*": ["routes/*"],
       "@/stateManager/*": ["stateManager/*"],
       "@/styles/*": ["styles/*"],
