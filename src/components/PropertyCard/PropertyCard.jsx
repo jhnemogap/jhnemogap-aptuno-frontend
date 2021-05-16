@@ -1,5 +1,7 @@
 import { BiBed, BiBath, BiArea } from "react-icons/bi";
+import AwesomeSlider from "react-awesome-slider";
 
+import "react-awesome-slider/dist/styles.css";
 import styles from "./PropertyCard.module.scss";
 
 export function PropertyCard(props) {
@@ -13,28 +15,32 @@ export function PropertyCard(props) {
     images = [],
     pricing = {
       rentalPrice: 0,
-      administrativeFee: 0
-    }
+      administrativeFee: 0,
+    },
+    shadow = true,
   } = props;
 
   const propertyType = description.toLowerCase().includes("casa") ? "Casa" : "Apartamento";
   const priceTotal = new Intl
-    .NumberFormat('es-CO', { style: 'currency', currency: 'COP' })
+    .NumberFormat("es-CO", { style: "currency", currency: "COP" })
     .format(pricing.rentalPrice + pricing.administrativeFee);
 
 
   return (
-    <article className={styles.card}>
-      {/*<div className={"imagesContainer"}>*/}
-      {/*  <img src={images[0] ?? ""} alt={`currentImageProperty${id}`} width={"100%"} />*/}
-      {/*</div>*/}
+    <article className={[styles.card, shadow ? styles.cardShadow : ""].join(" ")}>
+      <data value={id} hidden />
+
+      <AwesomeSlider
+        className={styles.sliderWrapper}
+        media={images.map((item) => ({ source: item }))}
+      />
 
       <div className={styles.details}>
         <p className={styles.type}>{propertyType}</p>
 
         <ul className={styles.infoIcons}>
           <li className={styles.item}>
-            <BiBed size="1.5rem" title="número de habitaciones" className={styles.icon}/>
+            <BiBed size="1.5rem" title="número de habitaciones" className={styles.icon} />
             <p>{bedrooms}</p>
           </li>
           <li className={styles.item}>

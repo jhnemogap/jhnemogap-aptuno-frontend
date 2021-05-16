@@ -4,18 +4,28 @@
   width: 100%;
   min-width: vars.$sizeTimes16;
   max-width: vars.$sizeTimes30;
-  padding: vars.$sizeTimes1;
   background-color: vars.$bgColorSecondary;
   border-radius: vars.$sizeTimes1;
-  box-shadow: 1px 2px 5px 0 vars.$bgColorTertiaryAction;
-  &:hover {
-    box-shadow: 5px 6px 8px 0 vars.$bgColorPrimaryAction;
+  &Shadow {
+    box-shadow: 1px 2px 5px 0 vars.$bgColorTertiaryAction;
+    &:hover {
+      box-shadow: 5px 6px 8px 0 vars.$bgColorPrimaryAction;
+    }
+  }
+}
+
+.sliderWrapper {
+  > div {
+    border-top-left-radius: vars.$sizeTimes1;
+    border-top-right-radius: vars.$sizeTimes1;
   }
 }
 
 .details {
   display: grid;
   row-gap: vars.$sizeTimes-1-2;
+  padding: vars.$sizeTimes1;
+  margin-top: vars.$sizeTimes2;
   text-align: center;
 
   .type {
