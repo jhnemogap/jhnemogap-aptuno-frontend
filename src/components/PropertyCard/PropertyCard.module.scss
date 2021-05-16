@@ -1,0 +1,53 @@
+@use "../../styles/vars";
+
+.card {
+  width: 100%;
+  min-width: vars.$sizeTimes16;
+  max-width: vars.$sizeTimes30;
+  background-color: vars.$bgColorSecondary;
+  border-radius: vars.$sizeTimes1;
+  &Shadow {
+    box-shadow: 1px 2px 5px 0 vars.$bgColorTertiaryAction;
+    &:hover {
+      box-shadow: 5px 6px 8px 0 vars.$bgColorPrimaryAction;
+    }
+  }
+}
+
+.sliderWrapper {
+  > div {
+    border-top-left-radius: vars.$sizeTimes1;
+    border-top-right-radius: vars.$sizeTimes1;
+  }
+}
+
+.details {
+  display: grid;
+  row-gap: vars.$sizeTimes-1-2;
+  padding: vars.$sizeTimes1;
+  margin-top: vars.$sizeTimes2;
+  text-align: center;
+
+  .type {
+    color: vars.$fontColorPrimaryLight;
+  }
+
+  .infoIcons {
+    display: flex;
+    justify-content: center;
+    .item {
+      display: flex;
+      align-items: center;
+      padding: 0 vars.$sizeTimes1;
+      .icon {
+        width: fit-content;
+        padding: 0 vars.$sizeTimes-1-2;
+        color: vars.$fontColorSecondary;
+      }
+    }
+  }
+
+  .price {
+    color: vars.$fontColorSecondary;
+  }
+}
