@@ -1,6 +1,23 @@
 @use "../../styles/vars";
 
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.headerWrapperInLayout {
+  @media (min-height: vars.$breakPoint45) {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+  }
+}
+
 .childrenContainer {
+  width: 100%;
   max-width: vars.$sizeTimes100;
   margin: vars.$sizeTimes1-5 auto;
   padding: vars.$sizeTimes1;

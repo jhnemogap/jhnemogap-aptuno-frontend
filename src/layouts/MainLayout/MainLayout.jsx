@@ -6,8 +6,10 @@ export function MainLayout(props) {
   const { children } = props;
 
   return (
-    <div>
-      <MainHeader />
+    <div className={styles.layout}>
+      <div className={styles.headerWrapperInLayout}>
+        <MainHeader />
+      </div>
 
       <div className={styles.childrenContainer}>
         {children}

@@ -1,13 +1,17 @@
 @use "../../styles/vars";
 
 .footer {
-  max-width: vars.$sizeTimes80;
-  margin: auto;
   padding: vars.$sizeTimes2-5 vars.$sizeTimes1 vars.$sizeTimes1;
   background-color: vars.$bgColorSecondary;
-  @media (min-width: vars.$breakPoint45) {
-    display: grid;
-    grid-template-columns: 5fr 7fr;
-    column-gap: vars.$sizeTimes2;
+
+  .contentContainer {
+    margin: auto;
+    max-width: vars.$sizeTimes80;
+    @media (min-width: vars.$breakPoint45) {
+      display: grid;
+      grid-template-columns: 5fr 7fr;
+      column-gap: vars.$sizeTimes2;
+    }
   }
+
 }
