@@ -80,6 +80,7 @@
 
     @media (min-width: vars.$breakPoint45) {
       display: flex;
+      justify-content: center;
       .formItemIn {
         min-width: vars.$sizeTimes16;
       }

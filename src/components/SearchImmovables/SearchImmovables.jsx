@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Select from "react-select";
 import { useRouter } from "next/router";
 
@@ -13,7 +13,7 @@ const regionsConstants = [
 
 export function SearchImmovables(props) {
   const { variant = false } = props;
-  const regionOptions = regionsConstants.map((item) => ({ value: encodeURI(item), label: item }));
+  const regionOptions = regionsConstants.map((item) => ({ value: item, label: item }));
   const roomOptions = [
     { value: 1, label: "1 habitación" },
     { value: 2, label: "2 habitaciones" },
@@ -22,6 +22,7 @@ export function SearchImmovables(props) {
   ];
 
   const router = useRouter();
+  const query = router.query;
   const [regionSelected, setRegionSelected] = useState("");
   const [roomsSelected, setRoomsSelected] = useState([]);
 
@@ -29,11 +30,11 @@ export function SearchImmovables(props) {
 
   const handleSelectRooms = (_, actionInfo) => {
     if (actionInfo.action === "select-option") {
-      setRoomsSelected((prev) => [...prev, actionInfo.option.value]);
+      setRoomsSelected((prev) => [...prev, actionInfo.option]);
       return;
     }
     if (actionInfo.action === "remove-value") {
-      setRoomsSelected((prev) => prev.filter((val) => val !== actionInfo.removedValue.value));
+      setRoomsSelected((prev) => prev.filter((val) => val.value !== actionInfo.removedValue.value));
       return;
     }
     if (actionInfo.action === "clear") setRoomsSelected([]);
@@ -41,8 +42,17 @@ export function SearchImmovables(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    router.push(routeImmovables(regionSelected, roomsSelected));
+    const roomsSelectedValues = roomsSelected.map((item) => item.value).join(",");
+    router.push(routeImmovables(regionSelected, roomsSelectedValues));
   };
+
+  useEffect(() => {
+    if (query?.region) setRegionSelected(decodeURI(query.region));
+    if (query?.rooms) {
+      const roomsQuery = query.rooms.split(",").map((n) => parseInt(n));
+      setRoomsSelected(roomOptions.filter((item) => roomsQuery.includes(item.value)));
+    }
+  }, []);
 
   return (
     <section className={variant ? styles.searchVariant : styles.search}>
@@ -54,10 +64,11 @@ export function SearchImmovables(props) {
         <div className={styles.formItemIn}>
           <label htmlFor="region">Sector de la ciudad</label>
           <Select
-            id="select-region"
             name="region"
+            inputId="select-region"
             placeholder="Seleccionar zona"
             options={regionOptions}
+            value={regionSelected ? { value: regionSelected, label: regionSelected } : null}
             onChange={handleSelectRegion}
           />
         </div>
@@ -65,11 +76,12 @@ export function SearchImmovables(props) {
         <div className={styles.formItemIn}>
           <label htmlFor="rooms">Número de Habitaciones</label>
           <Select
-            id="select-rooms"
             name="rooms"
+            inputId="select-rooms"
             placeholder="No. habitaciones"
             isMulti
             options={roomOptions}
+            value={roomsSelected}
             onChange={handleSelectRooms}
           />
         </div>
