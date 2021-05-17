@@ -1,0 +1,49 @@
+@use "../../styles/vars";
+@use "sass:color";
+
+.search {
+  width: 100%;
+  max-width: vars.$sizeTimes36;
+  text-align: center;
+  background-color: transparent;
+
+  .title {
+    font-size: 3.5rem;
+    font-weight: 500;
+    line-height: 1.125;
+    margin-bottom: vars.$sizeTimes2;
+  }
+}
+
+.form {
+  display: grid;
+  row-gap: vars.$sizeTimes1-5;
+  width: 100%;
+  text-align: left;
+
+  &ItemIn {
+    background-color: vars.$bgColorSecondary;
+    border-radius: vars.$sizeTimes-1-4;
+    box-shadow: 0 10px 25px 0 color.adjust(vars.$bgColorTertiaryAction, $lightness: 90%);
+    label {
+      font-size: 1.2em;
+      font-weight: 500;
+      padding-left: vars.$sizeTimes1;
+      color: vars.$fontColorSecondary;
+    }
+    div {
+      border-style: none;
+    }
+  }
+
+  .submitBtn {
+    font-size: 1rem;
+    width: 100%;
+    padding: vars.$sizeTimes1 vars.$sizeTimes1-5;
+    letter-spacing: vars.$sizeTimes-1-4;
+    color: vars.$brandColorPrimaryWhite;
+    background-color: vars.$bgColorPrimaryAction;
+    border-style: none;
+    border-radius: vars.$sizeTimes1;
+  }
+}

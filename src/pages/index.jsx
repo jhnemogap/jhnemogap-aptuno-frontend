@@ -1,3 +1,9 @@
+import { SearchImmovables } from "@/components/index";
+
 export default function Home() {
-  return <div>THE HOME, Almost before</div>;
+  return (
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+      <SearchImmovables />
+    </div>
+  );
 }

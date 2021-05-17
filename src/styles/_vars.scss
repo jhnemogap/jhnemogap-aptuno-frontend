@@ -11,9 +11,9 @@ $fontColorSecondary: $brandColorPrimary;
 $fontColorPrimaryLight: color.adjust($fontColorPrimary, $alpha: -0.24);
 $fontColorPrimaryLink: $colorPrimaryAction;
 
-$bgColorPrimary: color.adjust($brandColorPrimaryWhite, $blackness: 8%);
+$bgColorPrimary: color.adjust($brandColorPrimaryWhite, $blackness: 5%);
 $bgColorSecondary: $brandColorPrimaryWhite;
-$bgColorPrimaryAction: $colorPrimaryAction;
+$bgColorPrimaryAction: $brandColorPrimary;
 $bgColorSecondaryAction: $colorSecondaryAction;
 $bgColorTertiaryAction: $brandColorSecondary;
 
@@ -24,7 +24,7 @@ $sizeTimes-1-8: $fontSizeRoot * 0.125; // 16 * 1/8 => 2
 $sizeTimes-1-4: $fontSizeRoot * 0.25; // 16 * 1/4 => 4
 $sizeTimes-1-2: $fontSizeRoot * 0.5; // 16 * 1/2 => 8
 $sizeTimes1: $fontSizeRoot * 1; // 16 * 1 => 16
-$sizeTimes1-5: $fontSizeRoot * 1; // 16 * 1.5 => 24
+$sizeTimes1-5: $fontSizeRoot * 1.5; // 16 * 1.5 => 24
 $sizeTimes2: $fontSizeRoot * 2; // 16 * 2 => 32
 $sizeTimes2-5: $fontSizeRoot * 2.5; // 16 * 2.5 => 40
 $sizeTimes3: $fontSizeRoot * 3; // 16 * 1 => 48
