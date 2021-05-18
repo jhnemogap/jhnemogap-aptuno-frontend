@@ -1,6 +1,8 @@
 import { BiBed, BiBath, BiArea } from "react-icons/bi";
 import AwesomeSlider from "react-awesome-slider";
 
+import { copCurrencyToString } from "@/utils/numbersAndCurrencies";
+
 import "react-awesome-slider/dist/styles.css";
 import styles from "./PropertyCard.module.scss";
 
@@ -21,10 +23,7 @@ export function PropertyCard(props) {
   } = props;
 
   const propertyType = description.toLowerCase().includes("casa") ? "Casa" : "Apartamento";
-  const priceTotal = new Intl
-    .NumberFormat("es-CO", { style: "currency", currency: "COP" })
-    .format(pricing.rentalPrice + pricing.administrativeFee);
-
+  const priceTotal = copCurrencyToString(pricing.rentalPrice + pricing.administrativeFee);
 
   return (
     <article className={[styles.card, shadow ? styles.cardShadow : ""].join(" ")}>
