@@ -1,19 +1,15 @@
 import { useEffect, useState } from "react";
-import Select from "react-select";
+import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
+import Select from "react-select";
 
 import { routeImmovables } from "@/routes/paths";
 
 import styles from "./SearchImmovables.module.scss";
-
-const regionsConstants = [
-  "Chapinero", "Marly", "Parque de la 93", "Zona T", "Calle 85", "Usaquen", "Parque Nacional", "Calle 45", "Chico",
-  "Calle 116", "Unilago", "Calle 76", "Virrey"
-];
+import { getRegions } from "@/redux/regions/regions-actions";
 
 export function SearchImmovables(props) {
   const { variant = false } = props;
-  const regionOptions = regionsConstants.map((item) => ({ value: item, label: item }));
   const roomOptions = [
     { value: 1, label: "1 habitación" },
     { value: 2, label: "2 habitaciones" },
@@ -21,10 +17,14 @@ export function SearchImmovables(props) {
     { value: 4, label: "4 habitaciones" },
   ];
 
+  const dispatch = useDispatch();
   const router = useRouter();
   const query = router.query;
+
   const [regionSelected, setRegionSelected] = useState("");
   const [roomsSelected, setRoomsSelected] = useState([]);
+
+  const { regions } = useSelector((state) => state.regionsGS);
 
   const handleSelectRegion = ({ value }) => setRegionSelected(value);
 
@@ -47,6 +47,7 @@ export function SearchImmovables(props) {
   };
 
   useEffect(() => {
+    if (regions.length === 0) dispatch(getRegions());
     if (query?.region) setRegionSelected(decodeURI(query.region));
     if (query?.rooms) {
       const roomsQuery = query.rooms.split(",").map((n) => parseInt(n));
@@ -67,7 +68,7 @@ export function SearchImmovables(props) {
             name="region"
             inputId="select-region"
             placeholder="Seleccionar zona"
-            options={regionOptions}
+            options={regions.map((item) => ({ value: item, label: item }))}
             value={regionSelected ? { value: regionSelected, label: regionSelected } : null}
             onChange={handleSelectRegion}
           />
