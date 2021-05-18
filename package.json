@@ -1,6 +1,6 @@
 {
   "name": "jhnemogap-aptuno-frontend",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -25,5 +25,8 @@
     "prettier": "2.3.0",
     "redux-devtools-extension": "2.13.9",
     "sass": "1.32.13"
+  },
+  "engines": {
+    "node": ">=14.17.0 <15.0.0"
   }
 }
