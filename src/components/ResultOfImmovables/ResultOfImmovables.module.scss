@@ -1,0 +1,9 @@
+@use "../../styles/vars";
+
+.results {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: vars.$sizeTimes2;
+}

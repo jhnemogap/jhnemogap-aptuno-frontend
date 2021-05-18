@@ -1,9 +1,12 @@
 @use "../../styles/vars";
 
 .card {
+  display: grid;
+  grid-template-rows: auto auto;
+  row-gap: vars.$sizeTimes2;
   width: 100%;
   min-width: vars.$sizeTimes16;
-  max-width: vars.$sizeTimes30;
+  max-width: vars.$sizeTimes22;
   background-color: vars.$bgColorSecondary;
   border-radius: vars.$sizeTimes1;
   &Shadow {
@@ -13,20 +16,30 @@
       cursor: pointer;
     }
   }
+
+  @media (min-width: vars.$breakPoint30) {
+    max-width: vars.$sizeTimes25;
+  }
 }
 
 .sliderWrapper {
+  height: vars.$sizeTimes10;
   > div {
     border-top-left-radius: vars.$sizeTimes1;
     border-top-right-radius: vars.$sizeTimes1;
   }
+  @media (min-width: vars.$breakPoint25) {
+    height: vars.$sizeTimes16;
+  }
 }
 
 .details {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   row-gap: vars.$sizeTimes-1-2;
   padding: vars.$sizeTimes1;
-  margin-top: vars.$sizeTimes2;
+  //margin-top: vars.$sizeTimes2;
   text-align: center;
 
   .type {

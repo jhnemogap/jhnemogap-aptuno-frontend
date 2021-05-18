@@ -12,7 +12,7 @@ export function PropertyCard(props) {
     bedrooms = 0,
     bathrooms = 0,
     area = 0,
-    images = [],
+    images = ["https://cdn.aptuno.com/properties-images/928/e715acf1-86dc-499a-9cbf-8517d0f91217.jpg"],
     pricing = {
       rentalPrice: 0,
       administrativeFee: 0,
