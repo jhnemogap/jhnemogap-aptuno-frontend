@@ -1,0 +1,44 @@
+@use "../../styles/vars";
+
+.section {
+  margin: auto;
+  background-color: vars.$bgColorSecondary;
+  border-radius: vars.$sizeTimes1;
+
+  .extraInfo {
+    max-width: vars.$sizeTimes30;
+    padding: 0 vars.$sizeTimes1 vars.$sizeTimes1;
+    .aside {
+      padding: 0 vars.$sizeTimes1 vars.$sizeTimes1;
+      .postingTimes {
+        display: flex;
+        align-items: center;
+        gap: vars.$sizeTimes-1-2;
+        line-height: 1.25;
+        color: vars.$fontColorPrimaryLight;
+      }
+    }
+    .mapLocation {
+      border: 1px solid vars.$fontColorPrimary;
+    }
+  }
+
+  @media (min-width: vars.$sizeTimes48) {
+    display: flex;
+    gap: vars.$sizeTimes1-5;
+    .extraInfo {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: flex-end;
+      gap: vars.$sizeTimes3;
+      .mapLocation {
+        height: vars.$sizeTimes16;
+      }
+    }
+  }
+  @media (min-width: vars.$breakPoint75) {
+    .extraInfo > .mapLocation {
+      width: vars.$sizeTimes25;
+    }
+  }
+}
