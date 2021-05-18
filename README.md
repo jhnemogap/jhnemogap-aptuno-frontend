@@ -86,7 +86,9 @@ los estilos de sass usando css modules por cada componente generado que lo neces
 
 ## Gif de interacciones
 
+![Desktop](./public/desktopMode.gif)
 
+![mobile](./public/mobileMode.gif)
 
 ## Learn More about Next.js
 
