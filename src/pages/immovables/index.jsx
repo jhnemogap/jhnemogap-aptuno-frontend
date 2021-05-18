@@ -2,6 +2,8 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 import { ResultOfImmovables } from "@/components/index";
+
+import { divWithNPharagraphOfLorem } from "@/utils/fakes";
 import allData from "@/constants/properties.json";
 
 export default function Immovables() {
@@ -26,8 +28,10 @@ export default function Immovables() {
   }, [filters]);
 
   return(
-    <main className={"immovables"}>
+    <main style={{ display: "flex", flexDirection: "column", gap: "4rem" }}>
       <ResultOfImmovables immovables={immovables} />
+
+      {divWithNPharagraphOfLorem()}
     </main>
   );
 }

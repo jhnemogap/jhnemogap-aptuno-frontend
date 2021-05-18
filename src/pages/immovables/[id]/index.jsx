@@ -1,8 +1,10 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
-import allData from "@/constants/properties.json";
 import { ShowPropertyDetails } from "@/components/index";
+
+import { divWithNPharagraphOfLorem } from "@/utils/fakes";
+import allData from "@/constants/properties.json";
 
 export default function PropertyDetails() {
   const router = useRouter();
@@ -18,8 +20,10 @@ export default function PropertyDetails() {
   }, [router.query.id]);
 
   return (
-    <main>
+    <main style={{ display: "flex", flexDirection: "column", gap: "4rem" }}>
       <ShowPropertyDetails property={currentProperty} />
+
+      {divWithNPharagraphOfLorem(3)}
     </main>
   );
 }
