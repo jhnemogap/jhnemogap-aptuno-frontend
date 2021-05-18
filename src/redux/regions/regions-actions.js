@@ -1,5 +1,5 @@
 export const GET_REGIONS = "GET_REGIONS";
-export const getRegions = (payload) => ({
+export const getRegions = (payload = null) => ({
   type: GET_REGIONS,
   payload,
 });
