@@ -1,0 +1,67 @@
+@use "../../styles/vars";
+
+.card {
+  display: grid;
+  grid-template-rows: auto auto;
+  row-gap: vars.$sizeTimes2;
+  width: 100%;
+  min-width: vars.$sizeTimes16;
+  max-width: vars.$sizeTimes22;
+  background-color: vars.$bgColorSecondary;
+  border-radius: vars.$sizeTimes1;
+  &Shadow {
+    box-shadow: 1px 2px 5px 0 vars.$bgColorTertiaryAction;
+    &:hover {
+      box-shadow: 5px 6px 8px 0 vars.$bgColorPrimaryAction;
+      cursor: pointer;
+    }
+  }
+
+  @media (min-width: vars.$breakPoint30) {
+    max-width: vars.$sizeTimes25;
+  }
+}
+
+.sliderWrapper {
+  height: vars.$sizeTimes10;
+  > div {
+    border-top-left-radius: vars.$sizeTimes1;
+    border-top-right-radius: vars.$sizeTimes1;
+  }
+  @media (min-width: vars.$breakPoint25) {
+    height: vars.$sizeTimes16;
+  }
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: vars.$sizeTimes-1-2;
+  padding: vars.$sizeTimes1;
+  //margin-top: vars.$sizeTimes2;
+  text-align: center;
+
+  .type {
+    color: vars.$fontColorPrimaryLight;
+  }
+
+  .infoIcons {
+    display: flex;
+    justify-content: center;
+    .item {
+      display: flex;
+      align-items: center;
+      padding: 0 vars.$sizeTimes1;
+      .icon {
+        width: fit-content;
+        padding: 0 vars.$sizeTimes-1-2;
+        color: vars.$fontColorSecondary;
+      }
+    }
+  }
+
+  .price {
+    color: vars.$fontColorSecondary;
+  }
+}

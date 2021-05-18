@@ -1,0 +1,30 @@
+@use "../../styles/vars";
+
+.layout {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.headerWrapperInLayout {
+  @media (min-width: vars.$breakPoint45) {
+    position: sticky;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 50;
+  }
+}
+
+.searchInHome {
+  max-width: vars.$sizeTimes40;
+  padding: vars.$sizeTimes1;
+  margin: vars.$sizeTimes3-5 auto 0;
+}
+
+.childrenContainer {
+  width: 100%;
+  max-width: vars.$sizeTimes100;
+  margin: vars.$sizeTimes1-5 auto;
+  padding: vars.$sizeTimes1;
+}

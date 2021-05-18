@@ -1,0 +1,34 @@
+@use "../../styles/vars";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: vars.$sizeTimes-1-2 vars.$sizeTimes1;
+  background-color: vars.$bgColorSecondary;
+  border-bottom: 1px solid vars.$brandColorPrimary;
+
+  .nav {
+    display: flex;
+    align-items: center;
+    &Item {
+      display: none;
+      padding: vars.$sizeTimes-1-4 vars.$sizeTimes-1-2;
+      cursor: pointer;
+      &Logo {
+        display: block;
+      }
+    }
+  }
+  .myAccountBtn {
+    padding: vars.$sizeTimes1;
+    background-color: vars.$bgColorSecondaryAction;
+    border-width: 0;
+    border-radius: vars.$sizeTimes-1-2;
+  }
+
+  @media (min-width: vars.$breakPoint40) {
+    .nav > .navItem {
+      display: block;
+    }
+  }
+}

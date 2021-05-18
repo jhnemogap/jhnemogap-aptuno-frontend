@@ -1,0 +1,76 @@
+@use "sass:color";
+
+$brandColorPrimary: #0055fb;
+$brandColorSecondary: #000c1c;
+$brandColorPrimaryWhite: #fafaff;
+$colorPrimaryAction: #007bff;
+$colorSecondaryAction: #fd8d5d;
+
+$fontColorPrimary: $brandColorSecondary;
+$fontColorSecondary: $brandColorPrimary;
+$fontColorPrimaryLight: color.adjust($fontColorPrimary, $alpha: -0.24);
+$fontColorPrimaryLink: $colorPrimaryAction;
+
+$bgColorPrimary: color.adjust($brandColorPrimaryWhite, $blackness: 6%);
+$bgColorSecondary: $brandColorPrimaryWhite;
+$bgColorPrimaryAction: $brandColorPrimary;
+$bgColorSecondaryAction: $colorSecondaryAction;
+$bgColorTertiaryAction: $brandColorSecondary;
+
+$sizeUnit: 16px;
+$fontSizeRoot: $sizeUnit;
+
+$sizeTimes-1-8: $fontSizeRoot * 0.125; // 16 * 1/8 => 2
+$sizeTimes-1-4: $fontSizeRoot * 0.25; // 16 * 1/4 => 4
+$sizeTimes-1-2: $fontSizeRoot * 0.5; // 16 * 1/2 => 8
+$sizeTimes1: $fontSizeRoot * 1; // 16 * 1 => 16
+$sizeTimes1-5: $fontSizeRoot * 1.5; // 16 * 1.5 => 24
+$sizeTimes2: $fontSizeRoot * 2; // 16 * 2 => 32
+$sizeTimes2-5: $fontSizeRoot * 2.5; // 16 * 2.5 => 40
+$sizeTimes3: $fontSizeRoot * 3; // 16 * 1 => 48
+$sizeTimes3-5: $fontSizeRoot * 3.5; // 16 * 3.5 => 56
+$sizeTimes4: $fontSizeRoot * 4; // 16 * 2 => 64
+$sizeTimes10: $fontSizeRoot * 10; // 16 * 10 => 160
+$sizeTimes16: $fontSizeRoot * 16; // 16 * 16 => 256
+$sizeTimes20: $fontSizeRoot * 20; // 16 * 20 => 320
+$sizeTimes20: $fontSizeRoot * 20; // 16 * 20 => 320
+$sizeTimes22: $fontSizeRoot * 22; // 16 * 22 => 352
+$sizeTimes24: $fontSizeRoot * 24; // 16 * 24 => 384
+$sizeTimes25: $fontSizeRoot * 25; // 16 * 25 => 400
+$sizeTimes30: $fontSizeRoot * 30; // 16 * 30 => 480
+$sizeTimes32: $fontSizeRoot * 32; // 16 * 32 => 512
+$sizeTimes35: $fontSizeRoot * 35; // 16 * 35 => 560
+$sizeTimes36: $fontSizeRoot * 36; // 16 * 36 => 576
+$sizeTimes40: $fontSizeRoot * 40; // 16 * 40 => 640
+$sizeTimes45: $fontSizeRoot * 45; // 16 * 45 => 720
+$sizeTimes48: $fontSizeRoot * 48; // 16 * 48 => 768
+$sizeTimes60: $fontSizeRoot * 60; // 16 * 60 => 960
+$sizeTimes64: $fontSizeRoot * 64; // 16 * 64 => 1024
+$sizeTimes75: $fontSizeRoot * 75; // 16 * 75 => 1200
+$sizeTimes79: $fontSizeRoot * 79; // 16 * 79 => 1264
+$sizeTimes80: $fontSizeRoot * 80; // 16 * 80 => 1280
+$sizeTimes85: $fontSizeRoot * 85; // 16 * 85 => 1360
+$sizeTimes90: $fontSizeRoot * 90; // 16 * 90 => 1440
+$sizeTimes100: $fontSizeRoot * 100; // 16 * 100 => 1600
+$sizeTimes120: $fontSizeRoot * 120; // 16 * 120 => 1920
+
+$breakPoint20: $sizeTimes20 - 1;
+$breakPoint22: $sizeTimes22 - 1;
+$breakPoint24: $sizeTimes24 - 1;
+$breakPoint25: $sizeTimes25 - 1;
+$breakPoint30: $sizeTimes30 - 1;
+$breakPoint32: $sizeTimes32 - 1;
+$breakPoint35: $sizeTimes35 - 1;
+$breakPoint36: $sizeTimes36 - 1;
+$breakPoint40: $sizeTimes40 - 1;
+$breakPoint45: $sizeTimes45 - 1;
+$breakPoint48: $sizeTimes48 - 1;
+$breakPoint60: $sizeTimes60 - 1;
+$breakPoint64: $sizeTimes64 - 1;
+$breakPoint75: $sizeTimes75 - 1;
+$breakPoint79: $sizeTimes79 - 1;
+$breakPoint80: $sizeTimes80 - 1;
+$breakPoint85: $sizeTimes85 - 1;
+$breakPoint90: $sizeTimes90 - 1;
+$breakPoint100: $sizeTimes100 - 1;
+$breakPoint120: $sizeTimes120 - 1;

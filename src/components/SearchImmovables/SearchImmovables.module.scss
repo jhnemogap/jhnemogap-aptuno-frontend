@@ -1,0 +1,94 @@
+@use "../../styles/vars";
+@use "sass:color";
+
+.search {
+  width: 100%;
+  max-width: vars.$sizeTimes36;
+  text-align: center;
+  background-color: transparent;
+
+  .title {
+    font-size: vars.$sizeTimes2;
+    font-weight: 500;
+    line-height: 1.125;
+    margin-bottom: vars.$sizeTimes2;
+    @media (min-width: vars.$breakPoint30) {
+      font-size: vars.$sizeTimes3-5;
+    }
+  }
+
+  .form {
+    display: grid;
+    gap: vars.$sizeTimes1-5;
+    width: 100%;
+    text-align: left;
+
+    &ItemIn {
+      background-color: vars.$bgColorSecondary;
+      border-radius: vars.$sizeTimes-1-4;
+      box-shadow: 0 10px 25px 0 color.adjust(vars.$bgColorTertiaryAction, $lightness: 90%);
+      label {
+        font-size: 0.75rem;
+        font-weight: 500;
+        padding-left: vars.$sizeTimes1;
+        color: vars.$fontColorSecondary;
+        @media (min-width: vars.$breakPoint30) {
+          font-size: 1.2rem;
+        }
+      }
+      div {
+        border-style: none;
+      }
+    }
+
+    .submitBtn {
+      font-size: 1rem;
+      width: 100%;
+      padding: vars.$sizeTimes1 vars.$sizeTimes1-5;
+      letter-spacing: vars.$sizeTimes-1-4;
+      color: vars.$brandColorPrimaryWhite;
+      background-color: vars.$bgColorPrimaryAction;
+      border-style: none;
+      border-radius: vars.$sizeTimes1;
+    }
+  }
+}
+
+.searchVariant {
+  @extend .search;
+  max-width: 100%;
+  padding: vars.$sizeTimes1;
+  background-color: vars.$bgColorSecondary;
+  border-bottom: 1px solid #dbdbdb;
+
+  .title { display: none; }
+
+  .form {
+    gap: vars.$sizeTimes1;
+    &ItemIn {
+      label {
+        display: none;
+      }
+    }
+
+    @media (min-width: vars.$breakPoint30) {
+      grid-template: 1fr 1fr / 1fr 1fr;
+      .submitBtn {
+        grid-column: span 2;
+      }
+    }
+
+    @media (min-width: vars.$breakPoint45) {
+      display: flex;
+      justify-content: center;
+      .formItemIn {
+        min-width: vars.$sizeTimes16;
+      }
+      .submitBtn {
+        width: fit-content;
+        padding-top: vars.$sizeTimes-1-2;
+        padding-bottom: vars.$sizeTimes-1-2;
+      }
+    }
+  }
+}
