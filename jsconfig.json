@@ -5,8 +5,8 @@
       "@/components/*": ["components/*"],
       "@/constants/*": ["constants/*"],
       "@/layout/*": ["layout/*"],
+      "@/redux/*": ["redux/*"],
       "@/routes/*": ["routes/*"],
-      "@/stateManager/*": ["stateManager/*"],
       "@/styles/*": ["styles/*"],
       "@/types/*": ["types/*"],
       "@/utils/*": ["utils/*"]

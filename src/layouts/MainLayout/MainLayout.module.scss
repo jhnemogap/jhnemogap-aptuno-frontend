@@ -4,17 +4,22 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  min-height: 100vh;
 }
 
 .headerWrapperInLayout {
-  @media (min-height: vars.$breakPoint45) {
+  @media (min-width: vars.$breakPoint45) {
     position: sticky;
     top: 0;
     right: 0;
     left: 0;
+    z-index: 50;
   }
+}
+
+.searchInHome {
+  max-width: vars.$sizeTimes40;
+  padding: vars.$sizeTimes1;
+  margin: vars.$sizeTimes3-5 auto 0;
 }
 
 .childrenContainer {

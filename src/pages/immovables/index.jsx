@@ -1,17 +1,8 @@
-import Link from "next/link";
-
 import { PropertyCard } from "@/components/index";
-
-import { routePropertyDetails } from "@/routes/paths";
 
 export default function Immovables() {
   return(
     <div>
-      <p>LOS INMUEBLES</p>
-      <Link href={routePropertyDetails(100)}>
-        <a>Show property #10</a>
-      </Link>
-
       <PropertyCard
         id={100}
         title={"Casa con 1 cuarto(s), cerca de Chapinero, Marly"}
